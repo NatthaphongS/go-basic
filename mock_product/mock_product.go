@@ -3,6 +3,7 @@ package mockproduct
 import (
 	"math/rand"
 
+	productGenerator "github.com/NatthaphongS/go-basic/mock_product/internal/product_generator"
 	"github.com/google/uuid"
 )
 
@@ -16,7 +17,8 @@ type Product struct {
 // public function start with capital letter
 func GetRandomProduct() Product {
 	pid := uuid.New().String()
-	products := generateProductList()
+	// products := generateProductList()
+	products := productGenerator.GenerateProductList() // use internal package
 	
 	return Product{
 		PID: pid,
